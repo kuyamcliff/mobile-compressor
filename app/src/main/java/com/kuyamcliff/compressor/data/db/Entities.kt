@@ -42,6 +42,8 @@ data class CompressionJobEntity(
     val estimatedMaxBytes: Long = 0,
     val outputBytes: Long = 0,
     val replaceOriginal: Boolean = false,
+    /** Overwrite an existing output with the same name (user chose "Replace"). */
+    val replaceExisting: Boolean = false,
     val presetName: String? = null,
 )
 

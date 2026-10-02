@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b884442e0e07070079c02c0a6898474b",
+    "identityHash": "93291a522eaf2f726037185f58127e99",
     "entities": [
       {
         "tableName": "compression_job",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sourceUri` TEXT NOT NULL, `sourceName` TEXT NOT NULL, `sourceSize` INTEGER NOT NULL, `sourceDurationUs` INTEGER NOT NULL, `outputName` TEXT NOT NULL, `outputUri` TEXT, `outputKind` TEXT NOT NULL, `outputFolderUri` TEXT, `status` TEXT NOT NULL, `statusReason` TEXT, `priority` INTEGER NOT NULL, `position` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `startedAt` INTEGER, `completedAt` INTEGER, `progress` REAL NOT NULL, `configJson` TEXT NOT NULL, `planJson` TEXT NOT NULL, `summaryJson` TEXT NOT NULL, `statisticsJson` TEXT, `errorCode` INTEGER, `errorMessage` TEXT, `errorJson` TEXT, `usesHardware` INTEGER NOT NULL, `pipeline` TEXT NOT NULL, `estimatedMaxBytes` INTEGER NOT NULL, `outputBytes` INTEGER NOT NULL, `replaceOriginal` INTEGER NOT NULL, `presetName` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sourceUri` TEXT NOT NULL, `sourceName` TEXT NOT NULL, `sourceSize` INTEGER NOT NULL, `sourceDurationUs` INTEGER NOT NULL, `outputName` TEXT NOT NULL, `outputUri` TEXT, `outputKind` TEXT NOT NULL, `outputFolderUri` TEXT, `status` TEXT NOT NULL, `statusReason` TEXT, `priority` INTEGER NOT NULL, `position` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `startedAt` INTEGER, `completedAt` INTEGER, `progress` REAL NOT NULL, `configJson` TEXT NOT NULL, `planJson` TEXT NOT NULL, `summaryJson` TEXT NOT NULL, `statisticsJson` TEXT, `errorCode` INTEGER, `errorMessage` TEXT, `errorJson` TEXT, `usesHardware` INTEGER NOT NULL, `pipeline` TEXT NOT NULL, `estimatedMaxBytes` INTEGER NOT NULL, `outputBytes` INTEGER NOT NULL, `replaceOriginal` INTEGER NOT NULL, `replaceExisting` INTEGER NOT NULL, `presetName` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -170,6 +170,12 @@
           {
             "fieldPath": "replaceOriginal",
             "columnName": "replaceOriginal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "replaceExisting",
+            "columnName": "replaceExisting",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -553,7 +559,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b884442e0e07070079c02c0a6898474b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '93291a522eaf2f726037185f58127e99')"
     ]
   }
 }

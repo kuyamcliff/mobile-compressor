@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Compressor</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_progress">Compression progress</string>
+    <string name="notif_channel_progress_desc">Shows progress while videos are being compressed.</string>
+    <string name="notif_channel_results">Finished compressions</string>
+    <string name="notif_channel_results_desc">Tells you when a compression finishes or fails.</string>
+    <string name="notif_waiting_title">Compression queue</string>
+    <plurals name="notif_waiting_jobs">
+        <item quantity="one">%d video waiting</item>
+        <item quantity="other">%d videos waiting</item>
+    </plurals>
+    <string name="notif_compressing_title">Compressing</string>
+    <string name="notif_paused_title">Compression paused</string>
+    <string name="notif_progress_details">Current %1$s FPS · Average %2$s FPS · ETA %3$s</string>
+    <string name="notif_done_title">Compression complete</string>
+    <string name="notif_done_text">%1$s: %2$s → %3$s (%4$s smaller)</string>
+    <string name="notif_failed_title">Compression failed</string>
+    <string name="status_paused">Paused</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Queue / errors -->
+    <string name="queue_open_app_to_continue">Open the app to continue the queue (Android does not allow starting it from the background).</string>
+    <string name="queue_time_limit">Android\'s time limit for long background encodes was reached. Retry to start this job again.</string>
+    <string name="error_not_enough_space">Not enough free space. Required: %1$s. Available: %2$s.</string>
+    <string name="error_validation_failed">Encoding finished but the output file failed validation. The original file was not modified.</string>
+    <string name="replace_original_not_supported">The original could not be removed: its storage location does not allow deletion. The compressed file was kept.</string>
 </resources>
