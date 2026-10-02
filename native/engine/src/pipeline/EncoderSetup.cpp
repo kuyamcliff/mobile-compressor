@@ -1,7 +1,6 @@
 #include "pipeline/EncoderSetup.h"
 
 #include <cmath>
-#include <sstream>
 
 #include "core/Errors.h"
 #include "core/Log.h"
@@ -30,11 +29,6 @@ void applyVbv(AVCodecContext* ctx, const RateControl& rc) {
   else if (rc.maxBitrateKbps > 0) ctx->rc_buffer_size = rc.maxBitrateKbps * 2000;
 }
 
-std::string fmtNum(double v) {
-  std::ostringstream os;
-  os << v;
-  return os.str();
-}
 }  // namespace
 
 AVPixelFormat chooseEncoderPixFmt(const AVCodec* codec, const std::string& requested) {

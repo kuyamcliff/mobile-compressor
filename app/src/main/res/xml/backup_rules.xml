@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only preferences and presets are backed up; never caches, previews or job scratch. -->
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <include domain="database" path="compressor.db" />
+    <include domain="file" path="datastore/" />
+    <exclude domain="file" path="crashes/" />
+</full-backup-content>

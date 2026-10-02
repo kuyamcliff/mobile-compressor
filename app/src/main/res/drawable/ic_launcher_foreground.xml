@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Two nested rounded frames converging inward: "make it smaller". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="@color/launcher_foreground"
+        android:pathData="M30,34 L30,30 Q30,28 32,28 L44,28 L44,33 L35,33 L35,42 L30,42 Z" />
+    <path android:fillColor="@color/launcher_foreground"
+        android:pathData="M78,34 L78,30 Q78,28 76,28 L64,28 L64,33 L73,33 L73,42 L78,42 Z" />
+    <path android:fillColor="@color/launcher_foreground"
+        android:pathData="M30,74 L30,78 Q30,80 32,80 L44,80 L44,75 L35,75 L35,66 L30,66 Z" />
+    <path android:fillColor="@color/launcher_foreground"
+        android:pathData="M78,74 L78,78 Q78,80 76,80 L64,80 L64,75 L73,75 L73,66 L78,66 Z" />
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M45,44 L66,54 L45,64 Z" />
+</vector>

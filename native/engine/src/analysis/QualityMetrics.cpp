@@ -199,7 +199,7 @@ Json compareQuality(int sourceFd, int sampleFd, const Plan& plan, InterruptFlag*
       r = ref.next();
       if (!r) {
         refEnd = true;
-        av_buffersrc_add_frame(srcRef, nullptr);
+        (void)av_buffersrc_add_frame(srcRef, nullptr);
       }
     } else {
       checkAv(av_buffersrc_add_frame_flags(srcDist, d, AV_BUFFERSRC_FLAG_KEEP_REF), "metrics", "feeding sample");
@@ -207,7 +207,7 @@ Json compareQuality(int sourceFd, int sampleFd, const Plan& plan, InterruptFlag*
       d = dist.next();
       if (!d) {
         distEnd = true;
-        av_buffersrc_add_frame(srcDist, nullptr);
+        (void)av_buffersrc_add_frame(srcDist, nullptr);
       }
     }
     drain();
