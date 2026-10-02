@@ -43,7 +43,18 @@ void defaultSink(LogLevel level, const char* tag, const std::string& msg) {
 #endif
 }
 
+thread_local LogCapture* tCapture = nullptr;
+
 void ffmpegCallback(void* avcl, int level, const char* fmt, va_list vl) {
+  if (tCapture && level <= AV_LOG_WARNING) {
+    char cap[1024];
+    int pfx = 1;
+    va_list copy;
+    va_copy(copy, vl);
+    av_log_format_line2(avcl, level, fmt, copy, cap, sizeof(cap), &pfx);
+    va_end(copy);
+    LogCapture::offer(avcl, cap);
+  }
   LogLevel mapped;
   if (level <= AV_LOG_ERROR) mapped = LogLevel::Warn;  // FFmpeg "errors" are often recoverable; the engine reports real failures itself.
   else if (level <= AV_LOG_WARNING) mapped = LogLevel::Debug;
@@ -61,6 +72,17 @@ void ffmpegCallback(void* avcl, int level, const char* fmt, va_list vl) {
   Log::write(mapped, "ffmpeg", "%s", s.c_str());
 }
 }  // namespace
+
+LogCapture::LogCapture(const void* target) : target_(target), prev_(tCapture) { tCapture = this; }
+LogCapture::~LogCapture() { tCapture = prev_; }
+void LogCapture::offer(const void* avcl, const std::string& line) {
+  for (LogCapture* c = tCapture; c; c = c->prev_) {
+    if (c->target_ == avcl || c->target_ == nullptr) {
+      if (c->lines_.size() < 64) c->lines_.push_back(line);
+      return;
+    }
+  }
+}
 
 void Log::setLevel(LogLevel level) { level_.store(static_cast<int>(level)); }
 LogLevel Log::level() { return static_cast<LogLevel>(level_.load()); }

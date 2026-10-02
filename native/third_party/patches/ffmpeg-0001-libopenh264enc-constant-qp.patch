@@ -1,0 +1,14 @@
+--- a/libavcodec/libopenh264enc.c
++++ b/libavcodec/libopenh264enc.c
+@@ -221,6 +221,11 @@
+     param.sSpatialLayers[0].iSpatialBitrate     = param.iTargetBitrate;
+     param.sSpatialLayers[0].iMaxSpatialBitrate  = param.iMaxBitrate;
+     param.sSpatialLayers[0].uiProfileIdc        = s->profile;
++    /* Constant-QP encoding: with rate control off, OpenH264 codes every
++     * picture at iDLayerQp, which is otherwise left at its default (26).
++     * Derive it from qmin/qmax when the caller pinned a QP range. */
++    if (s->rc_mode == RC_OFF_MODE && avctx->qmin > 0 && avctx->qmax >= avctx->qmin)
++        param.sSpatialLayers[0].iDLayerQp = av_clip((avctx->qmin + avctx->qmax) / 2, 1, 51);
+ 
+ #if OPENH264_VER_AT_LEAST(1, 7)
+     if (avctx->sample_aspect_ratio.num && avctx->sample_aspect_ratio.den) {

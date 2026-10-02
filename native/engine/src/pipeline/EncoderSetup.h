@@ -4,25 +4,10 @@
 #include <vector>
 
 #include "core/FfRaii.h"
+#include "core/Log.h"
 #include "plan/Plan.h"
 
 namespace vc {
-
-// Collects FFmpeg log lines emitted on the calling thread for one object
-// (e.g. an encoder during avcodec_open2) so that warnings like Kvazaar's
-// "Invalid option" can be turned into a hard, explained failure.
-class LogCapture {
- public:
-  explicit LogCapture(const void* target);
-  ~LogCapture();
-  const std::vector<std::string>& lines() const { return lines_; }
-  static void offer(const void* avcl, const std::string& line);
-
- private:
-  const void* target_;
-  std::vector<std::string> lines_;
-  LogCapture* prev_;
-};
 
 // Maps the generic plan (rate control, GOP, B-frames, preset/tune/profile,
 // expert options) onto one FFmpeg software encoder. Each encoder has its own

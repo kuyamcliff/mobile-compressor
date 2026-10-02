@@ -1,5 +1,7 @@
 #include "plan/Plan.h"
 
+#include <algorithm>
+
 #include "core/Errors.h"
 
 namespace vc {
@@ -183,6 +185,7 @@ Plan parsePlan(const Json& j) {
       b.externalPath = get<std::string>(v["burn"], "externalPath", "");
       b.bitmap = get<bool>(v["burn"], "bitmap", false);
       b.fontsDir = get<std::string>(v["burn"], "fontsDir", "");
+      b.fallbackFont = get<std::string>(v["burn"], "fallbackFont", "");
       if (b.sourceStreamIndex < 0 && b.externalPath.empty()) bad("subtitle burn-in without a source");
       vp.burn = b;
     }
@@ -190,6 +193,9 @@ Plan parsePlan(const Json& j) {
     vp.hwBitrateMode = get<int>(v, "hwBitrateMode", 1);
     vp.hwQpMin = get<int>(v, "hwQpMin", -1);
     vp.hwQpMax = get<int>(v, "hwQpMax", -1);
+    vp.hwProfile = get<int>(v, "hwProfile", -1);
+    vp.hwLevel = get<int>(v, "hwLevel", -1);
+    vp.hwQuality = get<int>(v, "hwQuality", -1);
 
     if (vp.mode == VideoMode::Transcode) {
       if (!validDimension(vp.width) || !validDimension(vp.height)) bad("output dimensions must be even and 16..16384");

@@ -67,6 +67,7 @@ struct SubtitleBurn {
   std::string externalPath;    // app-private copy of an external subtitle file
   bool bitmap = false;
   std::string fontsDir;
+  std::string fallbackFont;  // font file used when a style's font is unavailable
 };
 
 struct VideoPlan {
@@ -100,6 +101,8 @@ struct VideoPlan {
   int hwColorFormat = 21;   // ByteBuffer input colour format for the hybrid pipeline
   int hwBitrateMode = 1;    // MediaCodec BITRATE_MODE_* (0 CQ, 1 VBR, 2 CBR)
   int hwQpMin = -1, hwQpMax = -1;
+  int hwProfile = -1, hwLevel = -1;  // MediaCodecInfo.CodecProfileLevel constants
+  int hwQuality = -1;                // BITRATE_MODE_CQ quality value
 };
 
 struct AudioPlan {

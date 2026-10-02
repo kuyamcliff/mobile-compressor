@@ -332,6 +332,15 @@ psnr ssim scdet signalstats cropdetect blackdetect select thumbnail entropy"
 if ! is_done ffmpeg; then
   log "FFmpeg $FFMPEG_VERSION (LGPL-2.1-or-later build)"
   s=$(fetch_tar ffmpeg "$FFMPEG_URL" "$FFMPEG_VERSION")
+  # Local patches (documented in FFMPEG.md); idempotent via a marker per patch.
+  for p in "$HERE"/patches/ffmpeg-*.patch; do
+    [ -f "$p" ] || continue
+    m="$s/.applied-$(basename "$p")"
+    if [ ! -f "$m" ]; then
+      (cd "$s" && patch -p1 -N --silent < "$p") || { echo "patch failed: $p" >&2; exit 1; }
+      touch "$m"
+    fi
+  done
   b="$BLD/ffmpeg"; rm -rf "$b"; mkdir -p "$b"
   args=(
     --prefix="$PREFIX" --libdir="$PREFIX/lib"

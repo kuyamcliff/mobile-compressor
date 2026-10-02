@@ -16,7 +16,6 @@ namespace vc {
 
 namespace {
 constexpr const char* TAG = "EncoderSetup";
-thread_local LogCapture* tCapture = nullptr;
 
 int keyIntFrames(const VideoPlan& v, AVRational frameRate) {
   if (v.keyIntSeconds <= 0) return -1;
@@ -37,17 +36,6 @@ std::string fmtNum(double v) {
   return os.str();
 }
 }  // namespace
-
-LogCapture::LogCapture(const void* target) : target_(target), prev_(tCapture) { tCapture = this; }
-LogCapture::~LogCapture() { tCapture = prev_; }
-void LogCapture::offer(const void* avcl, const std::string& line) {
-  for (LogCapture* c = tCapture; c; c = c->prev_) {
-    if (c->target_ == avcl || c->target_ == nullptr) {
-      if (c->lines_.size() < 64) c->lines_.push_back(line);
-      return;
-    }
-  }
-}
 
 AVPixelFormat chooseEncoderPixFmt(const AVCodec* codec, const std::string& requested) {
   AVPixelFormat want = av_get_pix_fmt(requested.c_str());
@@ -153,7 +141,11 @@ void configureSoftwareVideoEncoder(AVCodecContext* ctx, const VideoPlan& v, AVRa
     opts.set("kvazaar-params", joined);
     return;  // options already consumed
   } else if (enc == "libvpx-vp9" || enc == "libvpx") {
-    opts.set("deadline", v.preset == "best" ? "best" : v.preset == "realtime" ? "realtime" : "good");
+    // libvpx only produces first-pass statistics in good/best mode, so a
+    // two-pass job never runs with the realtime deadline.
+    bool twoPassMode = ctx->flags & (AV_CODEC_FLAG_PASS1 | AV_CODEC_FLAG_PASS2);
+    std::string deadline = v.preset == "best" ? "best" : (v.preset == "realtime" && !twoPassMode) ? "realtime" : "good";
+    opts.set("deadline", deadline);
     // cpu-used trades speed for efficiency; "good" with cpu-used 2..4 is the usual sweet spot.
     if (!v.tune.empty() && (v.tune == "screen" || v.tune == "film" || v.tune == "default")) {
       if (enc == "libvpx-vp9") opts.set("tune-content", v.tune);

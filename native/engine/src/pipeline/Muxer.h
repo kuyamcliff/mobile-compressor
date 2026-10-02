@@ -21,6 +21,9 @@ class Muxer {
   int addStream();  // returns output stream index
   AVStream* stream(int idx) const { return out_.ctx()->streams[idx]; }
   void markReady(int idx);
+  // Declares that every stream, the global metadata and the chapters are set up.
+  // The header is written only after sealing and once all streams are ready.
+  void seal();
   bool headerWritten() const { return headerWritten_; }
 
   // Takes ownership of pkt's data (unrefs it). Timestamps are in `srcTb`.
@@ -46,6 +49,7 @@ class Muxer {
   std::vector<int64_t> lastDts_;
   std::deque<Pending> queue_;
   bool headerWritten_ = false;
+  bool sealed_ = false;
   bool finished_ = false;
   int64_t packets_ = 0;
 };

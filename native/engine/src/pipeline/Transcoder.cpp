@@ -972,6 +972,7 @@ void Transcoder::runPass(int pass, TranscodeResult& result) {
 
     buildGlobalMetadata(out->ctx(), plan_, ic);
     addChapters(out->ctx(), plan_, ic, ctx.baseUs, ctx.segEndAbsUs, inputStartUs);
+    mux->seal();
   }
 
   if (handlers.empty()) throwError(ErrorCategory::InvalidConfiguration, "plan", "Nothing to encode.");

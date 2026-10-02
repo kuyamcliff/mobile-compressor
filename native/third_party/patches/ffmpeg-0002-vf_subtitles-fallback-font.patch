@@ -1,0 +1,36 @@
+--- a/libavfilter/vf_subtitles.c
++++ b/libavfilter/vf_subtitles.c
+@@ -54,6 +54,7 @@
+     ASS_Track    *track;
+     char *filename;
+     char *fontsdir;
++    char *fallback_font;
+     char *charenc;
+     char *force_style;
+     int stream_index;
+@@ -74,6 +75,7 @@
+     {"f",              "set the filename of file to read",                         OFFSET(filename),   AV_OPT_TYPE_STRING,     {.str = NULL},  0, 0, FLAGS }, \
+     {"original_size",  "set the size of the original video (used to scale fonts)", OFFSET(original_w), AV_OPT_TYPE_IMAGE_SIZE, {.str = NULL},  0, 0, FLAGS }, \
+     {"fontsdir",       "set the directory containing the fonts to read",           OFFSET(fontsdir),   AV_OPT_TYPE_STRING,     {.str = NULL},  0, 0, FLAGS }, \
++    {"fallback_font",  "font file used when no requested font is available",        OFFSET(fallback_font), AV_OPT_TYPE_STRING,  {.str = NULL},  0, 0, FLAGS }, \
+     {"alpha",          "enable processing of alpha channel",                       OFFSET(alpha),      AV_OPT_TYPE_BOOL,       {.i64 = 0   },         0,        1, FLAGS }, \
+ 
+ #define SHAPING_OPTIONS \
+@@ -283,7 +285,7 @@
+         return ret;
+ 
+     /* Initialize fonts */
+-    ass_set_fonts(ass->renderer, NULL, NULL, 1, NULL, 1);
++    ass_set_fonts(ass->renderer, ass->fallback_font, NULL, 1, NULL, 1);
+ 
+     ass->track = ass_read_file(ass->library, ass->filename, NULL);
+     if (!ass->track) {
+@@ -437,7 +439,7 @@
+     }
+ 
+     /* Initialize fonts */
+-    ass_set_fonts(ass->renderer, NULL, NULL, 1, NULL, 1);
++    ass_set_fonts(ass->renderer, ass->fallback_font, NULL, 1, NULL, 1);
+ 
+     /* Open decoder */
+     dec = avcodec_find_decoder(st->codecpar->codec_id);

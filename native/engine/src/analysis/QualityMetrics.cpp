@@ -62,7 +62,9 @@ class FrameSource {
           done_ = true;
           return nullptr;
         }
-        frame_->pts = us - start_;
+        // Quantise to 1 ms on both sides: containers such as Matroska store
+        // millisecond timestamps, and frame pairing must not depend on rounding.
+        frame_->pts = ((us - start_) + 500) / 1000 * 1000;
         return frame_.get();
       }
       if (r == AVERROR_EOF) {

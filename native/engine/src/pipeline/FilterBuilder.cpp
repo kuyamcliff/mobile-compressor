@@ -173,7 +173,7 @@ std::string buildVideoFilter(const VideoPlan& v, const VideoSourceProps& s, cons
   int ch = oh - v.crop.top - v.crop.bottom;
   cw &= ~1;
   ch &= ~1;
-  if (cw != v.width || ch != v.height || !v.crop.any()) {
+  if (cw != v.width || ch != v.height) {
     std::string flags = v.scaler + "+accurate_rnd+full_chroma_int";
     f.emplace_back("scale=w=" + std::to_string(v.width) + ":h=" + std::to_string(v.height) + ":flags=" + flags);
   }
@@ -200,6 +200,7 @@ std::string buildVideoFilter(const VideoPlan& v, const VideoSourceProps& s, cons
   if (v.burn && !v.burn->bitmap) {
     std::string sub = "subtitles=filename=" + escapeFilterValue(v.burn->externalPath);
     if (!v.burn->fontsDir.empty()) sub += ":fontsdir=" + escapeFilterValue(v.burn->fontsDir);
+    if (!v.burn->fallbackFont.empty()) sub += ":fallback_font=" + escapeFilterValue(v.burn->fallbackFont);
     f.emplace_back(sub);
   }
 

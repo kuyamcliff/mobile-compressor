@@ -1,2 +1,11 @@
 build-deps/
 native/prebuilt/
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+.kotlin/
+keystore.properties
+*.jks

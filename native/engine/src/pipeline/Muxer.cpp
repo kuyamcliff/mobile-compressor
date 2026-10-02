@@ -13,6 +13,7 @@ constexpr size_t kMaxQueuedPackets = 4096;
 Muxer::Muxer(OutputFile& out, const ContainerPlan& container) : out_(out), container_(container) {}
 
 int Muxer::addStream() {
+  if (sealed_) throwError(ErrorCategory::Internal, "mux", "Stream added after the output was sealed.");
   AVStream* st = avformat_new_stream(out_.ctx(), nullptr);
   if (!st) throw std::bad_alloc();
   ready_.push_back(false);
@@ -30,8 +31,13 @@ void Muxer::markReady(int idx) {
   tryWriteHeader();
 }
 
+void Muxer::seal() {
+  sealed_ = true;
+  tryWriteHeader();
+}
+
 void Muxer::tryWriteHeader() {
-  if (headerWritten_) return;
+  if (headerWritten_ || !sealed_) return;
   for (bool r : ready_) {
     if (!r) return;
   }
@@ -66,6 +72,9 @@ void Muxer::tryWriteHeader() {
 
 void Muxer::write(int idx, AVPacket* pkt, AVRational srcTb) {
   AVStream* st = stream(idx);
+  if (st->time_base.num <= 0 || st->time_base.den <= 0 || srcTb.num <= 0 || srcTb.den <= 0) {
+    throwError(ErrorCategory::Internal, "mux", "An output stream has no valid time base.");
+  }
   av_packet_rescale_ts(pkt, srcTb, st->time_base);
   pkt->stream_index = idx;
   pkt->pos = -1;
@@ -124,6 +133,7 @@ void Muxer::finish() {
                    "stream " + std::to_string(i));
       }
     }
+    sealed_ = true;
     tryWriteHeader();
   }
   int ret = av_write_trailer(out_.ctx());
