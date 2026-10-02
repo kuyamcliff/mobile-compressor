@@ -1,0 +1,27 @@
+# ninja log v6
+1	4657	1790956008813479560	CMakeFiles/vcengine.dir/src/core/Log.cpp.o	456532f9e8d9a450
+4	6164	1790956008820211739	CMakeFiles/vcengine.dir/src/probe/Thumbnail.cpp.o	a31917af41e3e62
+1	6517	1790956008817437656	CMakeFiles/vcengine.dir/src/core/Errors.cpp.o	f56c33dfd9c4cd75
+1	6600	1790956008817534674	CMakeFiles/vcengine.dir/src/core/FdIo.cpp.o	c0efc03e33f81be4
+2	7395	1790956008818465587	CMakeFiles/vcengine.dir/src/core/Util.cpp.o	d4c614f0b29f5764
+6517	9791	1790956015329479948	CMakeFiles/vcengine.dir/src/pipeline/FilterGraph.cpp.o	2050534f405e5216
+4	10423	1790956008819974546	CMakeFiles/vcengine.dir/src/probe/Probe.cpp.o	f96ca1e58b38e58
+7395	10638	1790956016209480000	CMakeFiles/vcengine.dir/src/pipeline/VideoEncoder.cpp.o	5824ab30925ee9b4
+6164	10650	1790956014977479927	CMakeFiles/vcengine.dir/src/pipeline/FilterBuilder.cpp.o	7c15f394cd311d3e
+4658	11332	1790956013473735388	CMakeFiles/vcengine.dir/src/plan/Plan.cpp.o	5166b02ece7cfb62
+10651	12375	1790956019465480193	CMakeFiles/vcengine.dir/src/pipeline/DtsGenerator.cpp.o	cbc2fe9272f3240
+6601	12614	1790956015413479953	CMakeFiles/vcengine.dir/src/pipeline/EncoderSetup.cpp.o	b1c2c7e13a794d9
+9791	12795	1790956018605480142	CMakeFiles/vcengine.dir/src/pipeline/Muxer.cpp.o	3849e8b995846f65
+10423	14487	1790956019237480180	CMakeFiles/vcengine.dir/src/pipeline/Progress.cpp.o	8344fb810d5a782d
+11332	16403	1790956020145480234	CMakeFiles/vcengine.dir/src/analysis/Validator.cpp.o	266bbb2e84e4e9
+12376	16434	1790956021189480296	CMakeFiles/vcengine.dir/src/analysis/QualityMetrics.cpp.o	338291ba867f3ef8
+12795	16511	1790956021609480321	CMakeFiles/vcengine.dir/src/analysis/BuildInfo.cpp.o	68b7ff7f0dc6e4aa
+12614	17666	1790956021425480310	CMakeFiles/vcengine.dir/src/analysis/Complexity.cpp.o	a71cf7eeecb47af9
+16511	20052	1790956025325480542	CMakeFiles/vcengine.dir/src/android/GlRenderer.cpp.o	4183411524de7d3d
+16404	20595	1790956025217480535	CMakeFiles/vcengine.dir/src/android/MediaCodecUtil.cpp.o	ddaf07b7f69186cf
+16435	21064	1790956025249480537	CMakeFiles/vcengine.dir/src/android/MediaCodecBufferEncoder.cpp.o	ec43c02c5e9e4d2e
+17666	21711	1790956026477480610	CMakeFiles/vcengine.dir/src/android/HwVideoHandler.cpp.o	84ea793a0bd1c460
+14487	22318	1790956023301480421	CMakeFiles/vcengine.dir/src/job/JobManager.cpp.o	58467bd1686dd94f
+10638	22468	1790956019452998904	CMakeFiles/vcengine.dir/src/pipeline/Transcoder.cpp.o	6d53ec7308306b20
+20052	25189	1790956028865480752	CMakeFiles/vcengine.dir/src/jni/JniBridge.cpp.o	d29a30abc87cd5a
+25190	25256	1790956034001481057	/home/user/mobile-compressor/app/build/intermediates/cxx/RelWithDebInfo/6ja1905d/obj/arm64-v8a/libvcengine.so	e61ba800b2278f7e

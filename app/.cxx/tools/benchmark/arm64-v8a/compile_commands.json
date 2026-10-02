@@ -1,0 +1,152 @@
+[
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/core/Log.cpp.o -c /home/user/mobile-compressor/native/engine/src/core/Log.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/core/Log.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/core/Log.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/core/Errors.cpp.o -c /home/user/mobile-compressor/native/engine/src/core/Errors.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/core/Errors.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/core/Errors.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/core/FdIo.cpp.o -c /home/user/mobile-compressor/native/engine/src/core/FdIo.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/core/FdIo.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/core/FdIo.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/core/Util.cpp.o -c /home/user/mobile-compressor/native/engine/src/core/Util.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/core/Util.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/core/Util.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/probe/Probe.cpp.o -c /home/user/mobile-compressor/native/engine/src/probe/Probe.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/probe/Probe.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/probe/Probe.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/probe/Thumbnail.cpp.o -c /home/user/mobile-compressor/native/engine/src/probe/Thumbnail.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/probe/Thumbnail.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/probe/Thumbnail.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/plan/Plan.cpp.o -c /home/user/mobile-compressor/native/engine/src/plan/Plan.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/plan/Plan.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/plan/Plan.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/FilterBuilder.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/FilterBuilder.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/FilterBuilder.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/FilterBuilder.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/FilterGraph.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/FilterGraph.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/FilterGraph.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/FilterGraph.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/EncoderSetup.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/EncoderSetup.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/EncoderSetup.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/EncoderSetup.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/VideoEncoder.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/VideoEncoder.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/VideoEncoder.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/VideoEncoder.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/Muxer.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/Muxer.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/Muxer.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/Muxer.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/Progress.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/Progress.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/Progress.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/Progress.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/Transcoder.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/Transcoder.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/Transcoder.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/Transcoder.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/pipeline/DtsGenerator.cpp.o -c /home/user/mobile-compressor/native/engine/src/pipeline/DtsGenerator.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/pipeline/DtsGenerator.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/pipeline/DtsGenerator.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/analysis/Validator.cpp.o -c /home/user/mobile-compressor/native/engine/src/analysis/Validator.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/analysis/Validator.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/analysis/Validator.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/analysis/QualityMetrics.cpp.o -c /home/user/mobile-compressor/native/engine/src/analysis/QualityMetrics.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/analysis/QualityMetrics.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/analysis/QualityMetrics.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/analysis/Complexity.cpp.o -c /home/user/mobile-compressor/native/engine/src/analysis/Complexity.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/analysis/Complexity.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/analysis/Complexity.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/analysis/BuildInfo.cpp.o -c /home/user/mobile-compressor/native/engine/src/analysis/BuildInfo.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/analysis/BuildInfo.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/analysis/BuildInfo.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/job/JobManager.cpp.o -c /home/user/mobile-compressor/native/engine/src/job/JobManager.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/job/JobManager.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/job/JobManager.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/android/MediaCodecUtil.cpp.o -c /home/user/mobile-compressor/native/engine/src/android/MediaCodecUtil.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/android/MediaCodecUtil.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/android/MediaCodecUtil.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/android/MediaCodecBufferEncoder.cpp.o -c /home/user/mobile-compressor/native/engine/src/android/MediaCodecBufferEncoder.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/android/MediaCodecBufferEncoder.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/android/MediaCodecBufferEncoder.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/android/GlRenderer.cpp.o -c /home/user/mobile-compressor/native/engine/src/android/GlRenderer.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/android/GlRenderer.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/android/GlRenderer.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/android/HwVideoHandler.cpp.o -c /home/user/mobile-compressor/native/engine/src/android/HwVideoHandler.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/android/HwVideoHandler.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/android/HwVideoHandler.cpp.o"
+},
+{
+  "directory": "/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a",
+  "command": "/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android29 --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dvcengine_EXPORTS -I/home/user/mobile-compressor/native/engine/src -I/home/user/mobile-compressor/native/engine/../prebuilt/android-arm64-v8a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fvisibility=hidden -ffunction-sections -fdata-sections -O2 -o CMakeFiles/vcengine.dir/src/jni/JniBridge.cpp.o -c /home/user/mobile-compressor/native/engine/src/jni/JniBridge.cpp",
+  "file": "/home/user/mobile-compressor/native/engine/src/jni/JniBridge.cpp",
+  "output": "CMakeFiles/vcengine.dir/src/jni/JniBridge.cpp.o"
+}
+]

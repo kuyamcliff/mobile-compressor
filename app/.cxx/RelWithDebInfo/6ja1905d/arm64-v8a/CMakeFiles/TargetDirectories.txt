@@ -1,0 +1,3 @@
+/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a/CMakeFiles/vcengine.dir
+/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/user/mobile-compressor/app/.cxx/RelWithDebInfo/6ja1905d/arm64-v8a/CMakeFiles/rebuild_cache.dir

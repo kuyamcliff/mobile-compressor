@@ -4,5 +4,4 @@
     <include domain="sharedpref" path="." />
     <include domain="database" path="compressor.db" />
     <include domain="file" path="datastore/" />
-    <exclude domain="file" path="crashes/" />
 </full-backup-content>

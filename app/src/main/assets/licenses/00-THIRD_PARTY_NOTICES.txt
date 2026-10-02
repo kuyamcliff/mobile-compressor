@@ -1,0 +1,57 @@
+THIRD-PARTY NOTICES
+===================
+
+This app bundles the following open-source components. All are built from
+source by native/third_party/build_deps.sh with the versions pinned in
+native/third_party/versions.env. No GPL or "nonfree" component is included.
+
+Component      Version        License                       Linked as
+-------------  -------------  ----------------------------  ------------------------------
+FFmpeg         9.0.2          LGPL-2.1-or-later             shared libraries (libav*.so, libsw*.so)
+dav1d          1.5.4          BSD-2-Clause                  static, inside libavcodec.so
+OpenH264       2.6.0          BSD-2-Clause                  static, inside libavcodec.so
+Kvazaar        2.3.2          BSD-3-Clause                  static, inside libavcodec.so
+libvpx         1.17.0         BSD-3-Clause (+ PATENTS)      static, inside libavcodec.so
+SVT-AV1        4.2.0          BSD-3-Clause-Clear (+ AOM patent license)  static, inside libavcodec.so
+Opus           1.6.1          BSD-3-Clause                  static, inside libavcodec.so
+LAME           3.100          LGPL-2.0-or-later             static, inside libavcodec.so
+zimg           3.0.6          WTFPL                         static, inside libswscale/libavfilter
+FreeType       2.14.3         FreeType License (FTL)        static, inside libavfilter.so
+FriBidi        1.0.17         LGPL-2.1-or-later             static, inside libavfilter.so
+HarfBuzz       14.5.1         MIT ("Old MIT")               static, inside libavfilter.so
+libass         0.17.5         ISC                           static, inside libavfilter.so
+nlohmann/json  3.12.0         MIT                           header-only, inside libvcengine.so
+This app itself: MIT (see LICENSE in the source repository).
+AndroidX / Jetpack Compose / Kotlin / Media3 libraries: Apache-2.0.
+
+FFmpeg license reported by the build: LGPL version 2.1 or later
+
+LGPL compliance (FFmpeg, LAME, FriBidi)
+---------------------------------------
+* The LGPL components are contained in the separate shared libraries
+  libavcodec.so, libavformat.so, libavfilter.so, libavutil.so, libswscale.so
+  and libswresample.so in the APK's lib/arm64-v8a directory. The app's own
+  code (libvcengine.so and the Kotlin code) only uses their public API, so the
+  libraries can be replaced by a modified build of the same ABI.
+* Complete corresponding source: FFmpeg 9.0.2 from
+  https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz plus the two local patches in
+  native/third_party/patches/ (ffmpeg-0001-libopenh264enc-constant-qp.patch,
+  ffmpeg-0002-vf_subtitles-fallback-font.patch), LAME 3.100 and FriBidi
+  1.0.17 from the URLs in versions.env. The exact build script is
+  native/third_party/build_deps.sh in the app's source repository. Anyone
+  distributing this APK must make that corresponding source available to its
+  recipients (LGPL-2.1 section 6).
+
+FFmpeg configure line (Android arm64-v8a)
+-----------------------------------------
+--prefix=<prefix> --libdir=<prefix>/lib --enable-shared --disable-static --enable-pic --disable-gpl --disable-nonfree --disable-autodetect --disable-doc --disable-network --disable-avdevice --disable-everything --enable-avcodec --enable-avformat --enable-avfilter --enable-avutil --enable-swscale --enable-swresample --enable-protocol=file --enable-protocol=pipe --enable-bsfs --enable-zlib --enable-libdav1d --enable-libopenh264 --enable-libkvazaar --enable-libvpx --enable-libsvtav1 --enable-libopus --enable-libmp3lame --enable-libzimg --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --pkg-config-flags=--static --extra-cflags='-O3 -fPIC -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -I<prefix>/include' --extra-ldflags='-Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384 -L<prefix>/lib' --extra-libs='-lc++_shared -lm' --enable-decoder=h264 --enable-decoder=hevc --enable-decoder=vp8 --enable-decoder=vp9 --enable-decoder=libdav1d --enable-decoder=mpeg4 --enable-decoder=msmpeg4v3 --enable-decoder=mpeg2video --enable-decoder=mpeg1video --enable-decoder=h263 --enable-decoder=mjpeg --enable-decoder=prores --enable-decoder=dnxhd --enable-decoder=theora --enable-decoder=vc1 --enable-decoder=wmv1 --enable-decoder=wmv2 --enable-decoder=wmv3 --enable-decoder=flv --enable-decoder=gif --enable-decoder=png --enable-decoder=ffv1 --enable-decoder=rawvideo --enable-decoder=huffyuv --enable-decoder=utvideo --enable-decoder=aac --enable-decoder=aac_latm --enable-decoder=mp1 --enable-decoder=mp2 --enable-decoder=mp3 --enable-decoder=mp3float --enable-decoder=ac3 --enable-decoder=eac3 --enable-decoder=opus --enable-decoder=vorbis --enable-decoder=flac --enable-decoder=alac --enable-decoder=dca --enable-decoder=truehd --enable-decoder=mlp --enable-decoder=wmav1 --enable-decoder=wmav2 --enable-decoder=wmapro --enable-decoder=amrnb --enable-decoder=amrwb --enable-decoder=gsm_ms --enable-decoder=adpcm_ima_wav --enable-decoder=adpcm_ms --enable-decoder=pcm_s16le --enable-decoder=pcm_s16be --enable-decoder=pcm_s24le --enable-decoder=pcm_s32le --enable-decoder=pcm_f32le --enable-decoder=pcm_u8 --enable-decoder=pcm_mulaw --enable-decoder=pcm_alaw --enable-decoder=subrip --enable-decoder=srt --enable-decoder=ass --enable-decoder=ssa --enable-decoder=webvtt --enable-decoder=movtext --enable-decoder=text --enable-decoder=dvdsub --enable-decoder=dvbsub --enable-decoder=pgssub --enable-decoder=microdvd --enable-encoder=libopenh264 --enable-encoder=libkvazaar --enable-encoder=libvpx_vp8 --enable-encoder=libvpx_vp9 --enable-encoder=libsvtav1 --enable-encoder=mpeg4 --enable-encoder=ffv1 --enable-encoder=mjpeg --enable-encoder=png --enable-encoder=rawvideo --enable-encoder=aac --enable-encoder=libopus --enable-encoder=libmp3lame --enable-encoder=flac --enable-encoder=alac --enable-encoder=ac3 --enable-encoder=eac3 --enable-encoder=pcm_s16le --enable-encoder=pcm_s24le --enable-encoder=movtext --enable-encoder=subrip --enable-encoder=srt --enable-encoder=ass --enable-encoder=ssa --enable-encoder=webvtt --enable-encoder=dvdsub --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=avi --enable-demuxer=mpegts --enable-demuxer=mpegps --enable-demuxer=flv --enable-demuxer=ogg --enable-demuxer=asf --enable-demuxer=mp3 --enable-demuxer=aac --enable-demuxer=ac3 --enable-demuxer=eac3 --enable-demuxer=wav --enable-demuxer=flac --enable-demuxer=srt --enable-demuxer=ass --enable-demuxer=webvtt --enable-demuxer=h264 --enable-demuxer=hevc --enable-demuxer=m4v --enable-demuxer=mxf --enable-demuxer=gif --enable-demuxer=mjpeg --enable-demuxer=rawvideo --enable-demuxer=dv --enable-demuxer=truehd --enable-demuxer=amr --enable-demuxer=ivf --enable-demuxer=obu --enable-demuxer=mpegvideo --enable-demuxer=concat --enable-demuxer=ffmetadata --enable-muxer=mp4 --enable-muxer=mov --enable-muxer=matroska --enable-muxer=webm --enable-muxer=tgp --enable-muxer=mpegts --enable-muxer=ipod --enable-muxer=ismv --enable-muxer=srt --enable-muxer=ass --enable-muxer=webvtt --enable-muxer=ffmetadata --enable-muxer=null --enable-parser=h264 --enable-parser=hevc --enable-parser=vp8 --enable-parser=vp9 --enable-parser=av1 --enable-parser=aac --enable-parser=aac_latm --enable-parser=mpegaudio --enable-parser=ac3 --enable-parser=opus --enable-parser=vorbis --enable-parser=flac --enable-parser=mpeg4video --enable-parser=mpegvideo --enable-parser=dca --enable-parser=mjpeg --enable-parser=png --enable-parser=vc1 --enable-parser=h263 --enable-parser=dvdsub --enable-parser=dvbsub --enable-filter=format --enable-filter=aformat --enable-filter=null --enable-filter=anull --enable-filter=copy --enable-filter=split --enable-filter=asplit --enable-filter=scale --enable-filter=crop --enable-filter=pad --enable-filter=fps --enable-filter=setsar --enable-filter=setdar --enable-filter=setpts --enable-filter=asetpts --enable-filter=trim --enable-filter=atrim --enable-filter=setparams --enable-filter=transpose --enable-filter=hflip --enable-filter=vflip --enable-filter=rotate --enable-filter=yadif --enable-filter=bwdif --enable-filter=idet --enable-filter=fieldmatch --enable-filter=decimate --enable-filter=deblock --enable-filter=nlmeans --enable-filter=atadenoise --enable-filter=bm3d --enable-filter=unsharp --enable-filter=cas --enable-filter=deband --enable-filter=gradfun --enable-filter=hue --enable-filter=colorspace --enable-filter=zscale --enable-filter=tonemap --enable-filter=lutyuv --enable-filter=overlay --enable-filter=subtitles --enable-filter=ass --enable-filter=aresample --enable-filter=pan --enable-filter=volume --enable-filter=asetnsamples --enable-filter=apad --enable-filter=loudnorm --enable-filter=dynaudnorm --enable-filter=psnr --enable-filter=ssim --enable-filter=scdet --enable-filter=signalstats --enable-filter=cropdetect --enable-filter=blackdetect --enable-filter=select --enable-filter=thumbnail --enable-filter=entropy --enable-cross-compile --target-os=android --arch=aarch64 --cpu=armv8-a --cc=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang --cxx=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang++ --ar=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar --nm=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-nm --ranlib=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib --strip=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip --sysroot=/opt/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot --pkg-config=pkg-config --disable-programs --disable-debug
+
+Patent notice
+-------------
+Video codecs such as H.264, HEVC and AV1 may be covered by patents in some
+jurisdictions. OpenH264 is compiled from source here, so Cisco's binary patent
+license for its prebuilt OpenH264 does not apply. Distributors are responsible
+for any patent licensing their distribution requires. Hardware encoders and
+decoders are provided by the device through Android's MediaCodec API.
+
+The full license texts follow in the other files of this directory.

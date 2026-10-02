@@ -3,7 +3,6 @@
     <cloud-backup>
         <include domain="database" path="compressor.db" />
         <include domain="file" path="datastore/" />
-        <exclude domain="file" path="crashes/" />
     </cloud-backup>
     <device-transfer>
         <include domain="database" path="compressor.db" />
