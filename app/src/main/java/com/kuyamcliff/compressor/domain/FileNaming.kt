@@ -56,7 +56,7 @@ object FileNaming {
         }
         var s = sb.toString().replace("..", "_").trim().trim('.', ' ')
         s = s.replace(Regex("_{2,}"), "_")
-        if (s.isEmpty()) s = "video"
+        if (s.all { it == '_' || it == '.' || it == ' ' }) s = "video"
         if (s.uppercase() in reserved) s += "_"
         if (s.length > MAX_BASE) s = s.take(MAX_BASE).trimEnd('.', ' ')
         return s
