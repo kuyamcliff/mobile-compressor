@@ -1,5 +1,6 @@
 #include "pipeline/EncoderSetup.h"
 
+#include <algorithm>
 #include <cmath>
 
 #include "core/Errors.h"
@@ -7,6 +8,7 @@
 #include "core/Util.h"
 
 extern "C" {
+#include <libavutil/cpu.h>
 #include <libavutil/opt.h>
 #include <libavutil/pixdesc.h>
 }
@@ -58,7 +60,10 @@ void configureSoftwareVideoEncoder(AVCodecContext* ctx, const VideoPlan& v, AVRa
   const std::string enc = v.encoder;
   const RateControl& rc = v.rc;
   int gop = keyIntFrames(v, frameRate);
-  if (v.threads > 0) ctx->thread_count = v.threads;
+  // AVCodecContext defaults to ONE thread; 0 asks the encoder to use all cores
+  // (libvpx, OpenH264, FFV1, mpeg4). An explicit value comes from the planner's
+  // per-job thread budget when several software jobs run in parallel.
+  ctx->thread_count = v.threads > 0 ? v.threads : 0;
   if (v.bFrames >= 0) ctx->max_b_frames = v.bFrames;
   if (v.refFrames > 0) ctx->refs = v.refFrames;
 
@@ -66,6 +71,12 @@ void configureSoftwareVideoEncoder(AVCodecContext* ctx, const VideoPlan& v, AVRa
     // OpenH264 has no CRF. "Constant quality" is realised as a fixed QP
     // (rate control off, qmin == qmax), which is what the UI labels it as.
     if (gop > 0) ctx->gop_size = gop;
+    // OpenH264 only parallelises across slices; one slice per core (max 4)
+    // roughly doubles speed for a ~0.1% size cost.
+    if (ctx->slices <= 0) {
+      int cores = v.threads > 0 ? v.threads : av_cpu_count();
+      ctx->slices = std::clamp(cores, 1, std::min(4, std::max(1, v.height / 64)));
+    }
     if (!v.profile.empty()) opts.set("profile", v.profile);
     opts.set("coder", v.profile == "constrained_baseline" ? "cavlc" : "cabac");
     switch (rc.mode) {
