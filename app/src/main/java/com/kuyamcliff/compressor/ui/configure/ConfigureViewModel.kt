@@ -61,6 +61,14 @@ sealed interface PreviewState {
     data class Failed(val error: EngineError) : PreviewState
 }
 
+/** Quick compare / "smallest file that still looks good" experiment (PRD §105, §150, §151). */
+sealed interface LadderState {
+    data object Idle : LadderState
+    data class Running(val index: Int, val total: Int, val progress: Double) : LadderState
+    data class Done(val points: List<com.kuyamcliff.compressor.preview.ComparisonPoint>, val segmentStartUs: Long) : LadderState
+    data class Failed(val message: String) : LadderState
+}
+
 sealed interface StartState {
     data object Idle : StartState
     data class ConfirmDanger(val items: List<String>) : StartState
@@ -100,6 +108,7 @@ data class ConfigureUiState(
     val calibration: Double = 1.0,
     val priority: JobPriority = JobPriority.NORMAL,
     val expertMode: Boolean = false,
+    val ladder: LadderState = LadderState.Idle,
 ) {
     val current: SourceFile? get() = sources.getOrNull(selected)?.file
     val errors: List<ConfigIssue> get() = issues.filter { it.severity == Severity.ERROR }
@@ -480,6 +489,43 @@ class ConfigureViewModel(app: Application) : AndroidViewModel(app) {
         }
         return s.config
     }
+
+    private var ladderJob: Job? = null
+
+    /**
+     * Encodes the same short segment at several quality levels with the current
+     * codec/resolution and measures real size + PSNR/SSIM for each.
+     */
+    fun runLadder(levels: List<com.kuyamcliff.compressor.model.QualityLevel>) {
+        val s = _state.value
+        val file = s.current ?: return
+        if (s.config.video.mode != com.kuyamcliff.compressor.model.VideoMode.TRANSCODE) return
+        val seg = c.previews.segmentFor(s.previewPosition, file.info.durationUs, s.previewSeconds, s.playerPositionUs, s.playerPositionUs)
+        val configs = levels.map { q ->
+            q.name.lowercase().replace('_', ' ').replaceFirstChar { it.uppercase() } to s.config.copy(
+                video = s.config.video.copy(rateControl = RateControlMode.CONSTANT_QUALITY, qualityLevel = q, qualitySlider = q.slider, nativeQuality = null, twoPass = false, smartTarget = false),
+            )
+        }
+        ladderJob?.cancel()
+        ladderJob = viewModelScope.launch {
+            _state.update { it.copy(ladder = LadderState.Running(0, configs.size, 0.0)) }
+            try {
+                val points = c.previews.compare(file, configs, seg) { i, p ->
+                    _state.update { it.copy(ladder = LadderState.Running(i, configs.size, p)) }
+                }
+                _state.update { it.copy(ladder = LadderState.Done(points, seg.startUs)) }
+            } catch (e: EngineFailure) {
+                _state.update { it.copy(ladder = LadderState.Failed(e.error.message)) }
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                _state.update { it.copy(ladder = LadderState.Idle) }
+                throw e
+            }
+        }
+    }
+
+    fun cancelLadder() { ladderJob?.cancel(); _state.update { it.copy(ladder = LadderState.Idle) } }
+
+    fun applyLadderPoint(p: com.kuyamcliff.compressor.preview.ComparisonPoint) = setConfig(p.config)
 
     fun dismissStart() = _state.update { it.copy(start = StartState.Idle) }
 

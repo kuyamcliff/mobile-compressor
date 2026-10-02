@@ -99,16 +99,13 @@ private val sections = listOf(
 /** Shows the sections for the current tier, or every section matching the search (PRD §91, §192). */
 fun LazyListScope.settingsSections(s: ConfigureUiState, vm: ConfigureViewModel, onPickFolder: () -> Unit) {
     val q = s.search.trim().lowercase()
-    val visible = if (q.isNotEmpty()) sections.filter { d -> d.keywords.any { it.contains(q) || q.contains(it) } || d.id.contains(q) }
-    else sections.filter { it.tier.ordinal <= s.tier.ordinal && (it.tier == s.tier || s.tier == SettingsTier.BASIC || it.tier != SettingsTier.BASIC) }
-        .filter { it.tier == s.tier || (s.tier != SettingsTier.BASIC && it.tier == SettingsTier.BASIC && false) || it.tier == s.tier }
+    val visible = if (q.isNotEmpty()) sections.filter { d -> d.id.contains(q) || d.keywords.any { it.contains(q) || q.contains(it) } }
+    else sections.filter { it.tier.ordinal <= s.tier.ordinal }
     if (q.isNotEmpty() && visible.isEmpty()) {
-        item { Text(stringResourceSafe(R.string.no_settings_match)) }
+        item { Text(stringResource(R.string.no_settings_match)) }
     }
     visible.forEach { d -> item(key = d.id) { d.content(s, vm, onPickFolder) } }
 }
-
-@Composable private fun stringResourceSafe(id: Int) = stringResource(id)
 
 private fun CompressionConfig.v(f: (com.kuyamcliff.compressor.model.VideoSettings) -> com.kuyamcliff.compressor.model.VideoSettings) = copy(video = f(video))
 

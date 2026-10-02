@@ -26,7 +26,13 @@ class Session {
     private val _openJob = MutableStateFlow<Long?>(null)
     val openJob: StateFlow<Long?> = _openJob.asStateFlow()
 
+    private val _openConfigure = MutableStateFlow(0L)
+    /** Incremented when an external intent (share sheet) should open the configure screen. */
+    val openConfigure: StateFlow<Long> = _openConfigure.asStateFlow()
+
     fun startConfigure(r: ConfigureRequest) { _configure.value = r }
+    fun requestOpenConfigure() { _openConfigure.value = System.nanoTime() }
+    fun consumeOpenConfigure() { _openConfigure.value = 0L }
     fun requestOpenJob(id: Long?) { _openJob.value = id }
     fun consumeOpenJob() { _openJob.value = null }
 }

@@ -120,10 +120,10 @@ fun SettingHeader(title: String, help: String? = null, modifier: Modifier = Modi
 fun <T> ChoiceChips(
     options: List<T>,
     selected: T?,
-    label: (T) -> String,
+    label: @Composable (T) -> String,
     onSelect: (T) -> Unit,
     modifier: Modifier = Modifier,
-    disabledReason: (T) -> String? = { null },
+    disabledReason: @Composable (T) -> String? = { null },
 ) {
     var explain by remember { mutableStateOf<String?>(null) }
     FlowRow(modifier, horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -159,7 +159,7 @@ fun <T> DropdownSetting(
     label: String,
     options: List<T>,
     selected: T,
-    display: (T) -> String,
+    display: @Composable (T) -> String,
     onSelect: (T) -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,

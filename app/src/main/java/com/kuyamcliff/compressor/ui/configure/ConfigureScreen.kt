@@ -541,10 +541,3 @@ fun PriorityChooser(selected: JobPriority, onSelect: (JobPriority) -> Unit) {
         stringResource(when (it) { JobPriority.LOW -> R.string.priority_low; JobPriority.NORMAL -> R.string.priority_normal; JobPriority.HIGH -> R.string.priority_high })
     }, onSelect)
 }
-
-@Suppress("unused")
-@Composable
-private fun Divider() = HorizontalDivider()
-
-@Suppress("unused")
-private fun unusedConfirm() = ConfirmDialog::class

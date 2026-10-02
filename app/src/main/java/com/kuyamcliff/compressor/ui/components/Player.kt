@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.VolumeOff
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
@@ -209,5 +208,4 @@ fun SourcePlayer(uri: Uri, fps: Double, modifier: Modifier = Modifier, onPositio
             }
         }
     }
-    @Suppress("UNUSED_EXPRESSION") Modifier.width(0.dp)
 }
