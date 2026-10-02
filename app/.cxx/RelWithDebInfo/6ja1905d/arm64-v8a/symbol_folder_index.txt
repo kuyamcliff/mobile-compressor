@@ -1,1 +1,0 @@
-/home/user/mobile-compressor/app/build/intermediates/cxx/RelWithDebInfo/6ja1905d/obj/arm64-v8a
